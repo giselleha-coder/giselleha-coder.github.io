@@ -1,4 +1,4 @@
-alert("Hello! I am an alert box!");
+
 
 var colors = ["white","pink","violet","aqua","lavender","plum"]
 math.random() = colors
