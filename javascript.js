@@ -12,10 +12,14 @@ var map;
 var intialLocation;
 var london;
 var panHome1;
+var home;
+var casa;
 
 function init()  {
     intialLocation = ol.proj.fromLonLat([41.043316, 28.862457]);
     london = ol.proj.fromLonLat([-0.12755, 51.507222]);
+    home = ol.proj.fromLonLat([37.376227, -122.060576]);
+
 
     view = new ol.View({
       center: intialLocation,
@@ -40,6 +44,13 @@ function panHome() {
     center: london,
     duration: 2000
   });
+}
+function panCasa() {
+  view.animate({
+    center: home,
+    duration: 2000
+  });
+
 }
 
 window.onload = init;
