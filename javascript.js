@@ -15,12 +15,12 @@ function init()  {
     intialLocation = ol.proj.fromLonLat([41.043316, 28.862457])
     london = ol.proj.fromLonLat([-0.12755, 51.507222]);
 
-    view = new.ol.View({
+    view = new ol.View({
       center: intialLocation,
       zoom: 6
     });
 
-    map = new.ol.Map({
+    map = new ol.Map({
       target: 'map',
       layers: [
         new.ol.layer.Tile({
