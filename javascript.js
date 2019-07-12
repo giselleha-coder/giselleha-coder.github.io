@@ -10,9 +10,11 @@ function backgroundChange() {
 var view;
 var map;
 var intialLocation;
+var london;
+var panHome;
 
 function init()  {
-    intialLocation = ol.proj.fromLonLat([41.043316, 28.862457])
+    intialLocation = ol.proj.fromLonLat([41.043316, 28.862457]);
     london = ol.proj.fromLonLat([-0.12755, 51.507222]);
 
     view = new ol.View({
@@ -20,16 +22,16 @@ function init()  {
       zoom: 6
     });
 
-    map = new ol.Map({
-      target: 'map',
-      layers: [
-        new.ol.layer.Tile({
-          source: new ol.source.OSM()
-        })
-      ],
-      loadTilesWhileAnimating: true,
-      view: view
-    });
+map = new ol.Map({
+  target: 'map',
+  layers: [
+    new ol.layer.Tile({
+      source: new ol.source.OSM()
+    })
+  ],
+  loadTilesWhileAnimating: true,
+  view: view
+  });
 
 }
 
