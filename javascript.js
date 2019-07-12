@@ -1,7 +1,7 @@
 
 
 var colors = ["white","pink","violet","aqua","lavender","plum"]
-math.random() = colors
+// math.random() = colors
 function backgroundChange() {
   var index = Math.floor(Math.random() * 4);
   document.body.style.backgroundColor = colors[index];
@@ -11,7 +11,7 @@ var view;
 var map;
 var intialLocation;
 var london;
-var panHome;
+var panHome1;
 
 function init()  {
     intialLocation = ol.proj.fromLonLat([41.043316, 28.862457]);
