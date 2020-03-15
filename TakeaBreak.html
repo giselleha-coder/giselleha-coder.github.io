@@ -1,0 +1,125 @@
+<html>
+<head>
+  <link rel="stylesheet" href="TakeaBreak.css">
+  </head>
+
+  <body>
+    <h1>Break Time</h1>
+    <ul>
+    <li><a class="active" href="Homeworkly.html">Home</a></li>
+    <li><a href="HWhelp.html">HW Help</a></li>
+    <li><a href="Research.html">Research Resources</a></li>
+    <li><a href="TakeaBreak.html">Take a Break</a></li>
+  </ul>
+
+    <title>Gigi's Help</title>
+
+
+
+
+  <iframe src="https://open.spotify.com/embed/playlist/1aeZv1CYwR39C6lf2mK1Bj" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+  <iframe src="https://open.spotify.com/embed/playlist/0OOZzfr4olaGarfeaydGZf" width="300" height="380" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>   <canvas id="game" width="400" height="400"></canvas>   <p>
+      Use arrow keys to move.
+    </p>
+
+  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+  <script>
+
+  var canv = document.getElementById("game");
+  var ctx = canv.getContext("2d");
+  var Player = {x: 0, y: 0, xMovement:0, yMovement:0};
+  var grid_size = 20;
+  var tile_count = 20;
+  var apple_x = 15;
+  var apple_y = 15;
+  var trail = [];
+  var tail = 5;
+
+
+  function draw() {
+    Player.x += Player.xMovement;
+    Player.y += Player.yMovement;
+
+    if (Player.x < 0) {
+      Player.x = tile_count - 1;
+    }
+    if (Player.x > tile_count - 1) {
+      Player.x = 0;
+    }
+    if (Player.y < 0) {
+      Player.y = tile_count - 1;
+    }
+    if (Player.y > tile_count - 1) {
+      Player.y = 0;
+    }
+
+    ctx.fillStyle = "black";
+    ctx.fillRect(0, 0, 400, 400);
+
+    ctx.fillStyle = "lime";
+    for (var i = 0; i < trail.length; i++){
+      ctx.fillRect(
+      trail[i].x * grid_size,
+      trail[i].y * grid_size,
+        grid_size - 2,
+        grid_size - 2
+      );
+
+
+      if (trail[i].x == Player.x && trail[i].y == Player.y) {
+        tail = 5;
+      }
+    }
+
+    trail.push({ x: Player.x, y: Player.y });
+    while (trail.length > tail) {
+        trail.shift();
+    }
+
+    ctx.font = "20px Georgia";
+    ctx.fillText(trail.length, grid_size * 19, grid_size);
+
+    if (apple_x == Player.x && apple_y == Player.y){
+      tail++;
+      apple_x = Math.floor(Math.random() * tile_count);
+      apple_y = Math.floor(Math.random() * tile_count);
+    }
+    ctx.fillStyle = "red";
+    ctx.fillRect(
+     apple_x * grid_size,
+     apple_y * grid_size,
+     grid_size - 2,
+     grid_size - 2
+    );
+  }
+
+  function keyPush(evt) {
+    switch (evt.keyCode) {
+      case 37: //left
+        Player.xMovement = -1;
+        Player.yMovement = 0;
+        break;
+      case 38: //up
+        Player.xMovement = 0;
+        Player.yMovement = -1;
+        break;
+      case 39: //right
+        Player.xMovement = 1;
+        Player.yMovement = 0;
+        break;
+      case 40: //down
+        Player.xMovement = 0;
+        Player.yMovement= 1;
+        break;
+
+    }
+  }
+
+  document.addEventListener("keydown", keyPush);
+
+  setInterval(draw, 1000 / 10);
+
+      </script>
+  </body>
+</html>

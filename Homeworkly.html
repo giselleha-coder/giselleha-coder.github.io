@@ -1,0 +1,93 @@
+<html>
+<head>
+  <link rel="stylesheet" href="Homeworkly.css">
+
+</head>
+
+  <body>
+
+<h1>Gigi's Help</h1>
+  <ul class="my-nav-bar">
+  <li class="my-nav-bar"><a class="active" href="Homeworkly.html">Home</a></li>
+  <li class="my-nav-bar"><a href="HWhelp.html">HW Help</a></li>
+  <li class="my-nav-bar"><a href="Research.html">Research Resources</a></li>
+  <li class="my-nav-bar"><a href="TakeaBreak.html">Take a Break</a></li>
+</ul>
+<h2> A Better Way to Tackle School Work</h2>
+
+<div class="row">
+<div class="column">
+  <h4> My Website helps you:</h4>
+<p>Find surprising HW Help reources such as videos, websites and more!
+Learn what works best for your learning time, set goals, and learn how to manage your time!</p>
+</div>
+
+<div class="column">
+  <h4>Doing school Research</h4>
+  <p>Need helps with starting you search in a research project?
+  We can help lead the way with tips and trustworthy websites that made the research process easier</p>
+</div>
+<div class="column">
+    <h4>Don't Overwhelm Yourself!</h4>
+    <p>We can help you take a good timely break. You can choose from the fun games available in my website, use some of our calming spotify playslist, or relax with a funny video.
+    We will help with keeping the break a good amount of time by having a timer track how long you are destressing for.</p>
+  </div>
+</div>
+
+
+
+<div id="myDIV" class="header">
+  <h3>What are your goals for today?</h3>
+  <input type="text" id="myInput" placeholder="Title...">
+  <span onclick="newElement()" class="addBtn">Add</span>
+</div>
+
+
+
+<ol id="myUL">
+<li id="user-input"></li>
+</ol>
+
+
+
+<p id="demo"></p>
+
+
+<script>
+
+
+
+
+
+
+
+function newElement() {
+  var x = document.createElement("LI");
+  var inputValue = document.getElementById("myInput").value;
+  var t = document.createTextNode(inputValue);
+  x.appendChild(t);
+  if (inputValue === '') {
+    alert("You must write something!");
+  } else {
+    document.getElementById("myUL").appendChild(x);
+  }
+
+}
+
+
+function myFunction() {
+  var x = document.createElement("LI");
+  var t = document.createTextNode("Coffee");
+  x.appendChild(t);
+  document.getElementById("myList").appendChild(x);
+}
+
+
+
+
+</script>
+
+
+
+  </body>
+</html>
