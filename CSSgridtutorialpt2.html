@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title> Css Grids 2</title>
+  <style>
+  .wrapper{
+    display:grid;
+    /*grid-template-columns: 1fr 1fr 1fr;*/
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 1em;
+    /*how to manage height of boxes below */
+    /*hogrid-auto-rows: 200px;*/
+    grid-auto-rows: minmax(100px, auto);
+  }
+  .nested{
+    display:grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-auto-rows: 70px;
+    grid-gap:1em;
+  }
+
+  .wrapper > div{
+    background:#eee;
+    padding:1em;
+  }
+  .wrapper > div:nth-child(odd){
+    background:#ddd;
+  }
+
+  .nested > div{
+    border:#333 1px solid;
+    padding: 1em;
+  }
+
+  </style>
+</head>
+<body>
+  <div class= "wrapper">
+    <div>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+    <div>
+      Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+    </div>
+    <div class= "nested">
+      <div>lorem</div>
+      <div>lorem</div>
+      <div>lorem</div>
+
+    </div>
+    <div>
+      HELOOOOOO WORLD
+
+    </div>
+    <div>
+      HELOOOOOO WORLD
+
+    </div>
+    <div>
+      HELOOOOOO WORLD
+
+    </div>
+    <div>
+      HELOOOOOO WORLD
+
+    </div>
+  </div>
+</body>
+</html>

@@ -4,12 +4,69 @@ h1 {
     padding: 30px;
 }
 
+h2 {
+  text-align:center;
+}
+
+p{
+  text-align: center;
+}
 body {
-     
      background:#1ac6ff;
      font-family: "Verdana", Sans-serif;
-
+     transition: 200ms ease;
 }
+
+.wrapper{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows:minmax(auto);
+  padding-top: 20px;
+  padding-left: 1px;
+  padding-right: 1px;
+  background: #1ac6ff;
+}
+
+.timer{
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows:minmax(auto);
+  background: #1ac6ff;
+}
+.wrapper > div{
+  background:#f1f1f1;
+  padding:1em;
+  border: #333 2px solid;
+}
+.wrapper > div:nth-child(odd){
+  background:#f1f1f1;
+}
+
+/*Musics and Spotify are ok leave how it is*/
+.spotify{
+grid-column: 4;
+grid-row:2;
+align-self: auto;
+}
+.music1{
+grid-column:4;
+grid-row: 2;
+align-self: end;
+}
+.music2{
+grid-row:4;
+grid-column:4;
+}
+.snakegame{
+  grid-column:3;
+  grid-row:2;
+}
+.timer{
+  grid-column: 1;
+  grid-row:2;
+  align-self: start;
+}
+
 ul {
   list-style-type: none;
   margin: 0;

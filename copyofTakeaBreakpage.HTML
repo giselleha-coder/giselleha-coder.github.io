@@ -32,8 +32,9 @@
 <source src="Alarm Clock - Free Sound Effect.mp3" />
 </audio>
 -->
-  <div><input type="text" id="myInput" >
+  <div><input type="text" id="myInput">
 <button onclick="updateMin()">Start</button></div>
+
   <div><p id="demo"> </p></div>
     <button onclick="stopTimer()">Stop</button>
      </div>
@@ -178,13 +179,18 @@
       document.getElementById("demo").innerHTML = "Time is up!";
 
       mySound.play();
+    };
 
-    }
+    if (sec - i > 0){
   document.getElementById("demo").innerHTML = sec - i;
     i = i + 1
     console.log("The value of i is:" + i);
-  }
+  };
+  else if (sec - i < 0) {
+    return 0;
+  };
 
+}
 
   document.addEventListener("keydown", keyPush);
 
